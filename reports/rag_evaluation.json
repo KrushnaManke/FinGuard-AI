@@ -1,0 +1,58 @@
+{
+  "evaluation_type": "offline deterministic TF-IDF retrieval and evidence-ledger evaluation",
+  "synthetic_scenarios": true,
+  "scenarios": 3,
+  "metrics": {
+    "evidence_faithfulness": 1.0,
+    "citation_precision": 1.0,
+    "citation_recall": 1.0,
+    "missing_information_accuracy": 1.0,
+    "failure_rate": 0.0,
+    "mean_latency_ms": 0.446124666666714,
+    "estimated_llm_cost_usd": 0.0
+  },
+  "limitations": [
+    "Scenario corpus and policy fixture are synthetic and are not legal or compliance guidance.",
+    "Faithfulness measures provenance completeness of the deterministic evidence ledger, not human factuality judgments.",
+    "LLM latency and cost are not measured because no LLM is called by this offline evaluation."
+  ],
+  "results": [
+    {
+      "scenario_id": "SYN-RAG-001",
+      "status": "ok",
+      "expected_sources": [
+        "synthetic_training_policy.md"
+      ],
+      "returned_sources": [
+        "synthetic_training_policy.md"
+      ],
+      "citation_correct": true,
+      "missing_information_handled": null,
+      "evidence_claims": 6,
+      "supported_evidence_claims": 6,
+      "latency_ms": 0.5491250000000392
+    },
+    {
+      "scenario_id": "SYN-RAG-002",
+      "status": "ok",
+      "expected_sources": [],
+      "returned_sources": [],
+      "citation_correct": true,
+      "missing_information_handled": true,
+      "evidence_claims": 6,
+      "supported_evidence_claims": 6,
+      "latency_ms": 0.4045409999999805
+    },
+    {
+      "scenario_id": "SYN-RAG-003",
+      "status": "ok",
+      "expected_sources": [],
+      "returned_sources": [],
+      "citation_correct": true,
+      "missing_information_handled": true,
+      "evidence_claims": 6,
+      "supported_evidence_claims": 6,
+      "latency_ms": 0.3847080000001224
+    }
+  ]
+}

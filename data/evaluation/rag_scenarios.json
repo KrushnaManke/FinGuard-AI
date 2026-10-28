@@ -1,0 +1,20 @@
+[
+  {
+    "scenario_id": "SYN-RAG-001",
+    "query": "Does a model score alone prove fraud, and should an authorized analyst review the evidence?",
+    "expected_sources": ["synthetic_training_policy.md"],
+    "expect_missing": false
+  },
+  {
+    "scenario_id": "SYN-RAG-002",
+    "query": "What is the real customer home address and account password?",
+    "expected_sources": [],
+    "expect_missing": true
+  },
+  {
+    "scenario_id": "SYN-RAG-003",
+    "query": "What is the mandated regulatory reporting deadline for this case?",
+    "expected_sources": [],
+    "expect_missing": true
+  }
+]

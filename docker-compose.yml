@@ -1,0 +1,33 @@
+services:
+  api:
+    build: .
+    command: uvicorn finguard.api:app --host 0.0.0.0 --port 8000
+    env_file: .env
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      FINGUARD_MODEL_DIR: /app/models
+      FINGUARD_AUDIT_DB: /app/data/processed/finguard.sqlite3
+    volumes:
+      - ./data/processed:/app/data/processed
+      - ./models:/app/models:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  dashboard:
+    build: .
+    command: streamlit run app/Home.py --server.address 0.0.0.0 --server.port 8501
+    env_file: .env
+    ports:
+      - "127.0.0.1:8501:8501"
+    environment:
+      FINGUARD_MODEL_DIR: /app/models
+    volumes:
+      - ./data:/app/data:ro
+      - ./data/processed:/app/data/processed
+      - ./models:/app/models:ro
+    depends_on:
+      api:
+        condition: service_healthy

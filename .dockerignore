@@ -1,0 +1,10 @@
+.venv
+.git
+.pytest_cache
+__pycache__
+*.py[cod]
+data/raw
+data/processed
+data/compliance/.chroma
+models
+.env

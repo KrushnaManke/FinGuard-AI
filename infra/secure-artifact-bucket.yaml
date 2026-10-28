@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Private encrypted S3 bucket for FinGuard demo artifacts.
+Parameters:
+  BucketName:
+    Type: String
+    Description: Globally unique bucket name; do not use real financial/customer data in this demo.
+  ExistingRoleName:
+    Type: String
+    Description: Existing trusted role allowed to read/write artifacts in this bucket.
+Resources:
+  ArtifactBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Project
+          Value: FinGuard-AI
+  ArtifactAccessPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: FinGuardDemoArtifactAccess
+      Roles:
+        - !Ref ExistingRoleName
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:ListBucket
+            Resource: !GetAtt ArtifactBucket.Arn
+          - Effect: Allow
+            Action:
+              - s3:GetObject
+              - s3:PutObject
+            Resource: !Sub "${ArtifactBucket.Arn}/*"
+Outputs:
+  Bucket:
+    Value: !Ref ArtifactBucket

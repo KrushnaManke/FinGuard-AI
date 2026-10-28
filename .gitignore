@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.env
+reports/*.csv
+data/raw/
+data/processed/
+data/compliance/.chroma/
+.streamlit/secrets.toml

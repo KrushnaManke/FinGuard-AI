@@ -1,0 +1,172 @@
+{
+  "model": "logistic",
+  "target": "Class",
+  "features": [
+    "Time",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount",
+    "LogAmount",
+    "ElapsedCycleSin",
+    "ElapsedCycleCos"
+  ],
+  "threshold": 0.9213606739884248,
+  "threshold_objective": "alert-rate",
+  "threshold_selection": "top validation alert fraction 0.5000% (target 214 alerts)",
+  "validation_alert_budget": {
+    "target_count": 214,
+    "actual_count": 214,
+    "fraction_of_validation_rows": 0.005009597827613652
+  },
+  "split": {
+    "strategy": "chronological, timestamp-quantile 70/15/15 split",
+    "train_max_time": 132929.0,
+    "validation_min_time": 132930.0,
+    "validation_max_time": 151328.0,
+    "test_min_time": 151329.0,
+    "train_cutoff": 132929.0,
+    "validation_cutoff": 151328.1,
+    "train_rows": 199368,
+    "validation_rows": 42718,
+    "test_rows": 42721,
+    "train_fraud": 384,
+    "validation_fraud": 56,
+    "test_fraud": 52,
+    "random_state": 42
+  },
+  "dataset": {
+    "transactions": 284807,
+    "duplicate_rows": 1081,
+    "fraud_transactions": 492,
+    "non_fraud_transactions": 284315,
+    "fraud_rate": 0.001727485630620034,
+    "amount_min": 0.0,
+    "amount_max": 25691.16,
+    "time_min": 0.0,
+    "time_max": 172792.0
+  },
+  "training_duration_seconds": 1.547717667,
+  "validation_metrics": {
+    "precision": 0.2383177570093458,
+    "recall": 0.9107142857142857,
+    "f1": 0.37777777777777777,
+    "average_precision": 0.8442710394050035,
+    "roc_auc": 0.9834772664867362,
+    "confusion_matrix": [
+      [
+        42499,
+        163
+      ],
+      [
+        5,
+        51
+      ]
+    ],
+    "true_negatives": 42499,
+    "false_positives": 163,
+    "false_negatives": 5,
+    "true_positives": 51
+  },
+  "test_metrics": {
+    "precision": 0.2978723404255319,
+    "recall": 0.8076923076923077,
+    "f1": 0.43523316062176165,
+    "average_precision": 0.7210425045605094,
+    "roc_auc": 0.9774861320684987,
+    "confusion_matrix": [
+      [
+        42570,
+        99
+      ],
+      [
+        10,
+        42
+      ]
+    ],
+    "true_negatives": 42570,
+    "false_positives": 99,
+    "false_negatives": 10,
+    "true_positives": 42
+  },
+  "test_all_negative_baseline": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "average_precision": 0.00121719997191077,
+    "roc_auc": 0.5,
+    "confusion_matrix": [
+      [
+        42669,
+        0
+      ],
+      [
+        52,
+        0
+      ]
+    ],
+    "true_negatives": 42669,
+    "false_positives": 0,
+    "false_negatives": 52,
+    "true_positives": 0
+  },
+  "test_metrics_at_alert_budgets": [
+    {
+      "alert_budget": 100,
+      "requested_budget": 100,
+      "true_positives": 41,
+      "precision": 0.41,
+      "recall": 0.7884615384615384,
+      "random_baseline_expected_precision": 0.00121719997191077,
+      "random_baseline_expected_recall": 0.0023407691767514806
+    },
+    {
+      "alert_budget": 500,
+      "requested_budget": 500,
+      "true_positives": 42,
+      "precision": 0.084,
+      "recall": 0.8076923076923077,
+      "random_baseline_expected_precision": 0.00121719997191077,
+      "random_baseline_expected_recall": 0.011703845883757403
+    },
+    {
+      "alert_budget": 1000,
+      "requested_budget": 1000,
+      "true_positives": 44,
+      "precision": 0.044,
+      "recall": 0.8461538461538461,
+      "random_baseline_expected_precision": 0.00121719997191077,
+      "random_baseline_expected_recall": 0.023407691767514806
+    }
+  ],
+  "anomaly_test_metrics": {
+    "average_precision": 0.035822870401166294,
+    "roc_auc": 0.9474019149193162,
+    "score_description": "Higher values indicate greater anomaly; this is not a fraud probability."
+  }
+}
