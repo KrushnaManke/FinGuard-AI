@@ -8,7 +8,7 @@
 
   **Decision-support for fraud analysts — not a replacement for human judgment.**
 
-  [Deploy this app](https://share.streamlit.io/deploy?repository=KrushnaManke/FinGuard-AI&branch=main&mainModule=app/Home.py) · [Run locally](#quick-start) · [Architecture](#architecture) · [Contributing](CONTRIBUTING.md)
+  [Open live demo](https://finguard-ai-4otf.onrender.com) · [Run locally](#quick-start) · [Architecture](#architecture) · [Contributing](CONTRIBUTING.md)
 </div>
 
 > **Responsible use:** FinGuard is an educational portfolio project using public benchmark data. Scores can support review, but must never independently block a transaction or make a credit decision.
@@ -33,7 +33,7 @@ Educational fraud detection and financial investigation platform. This repositor
 
 The hosted experience uses a public demo dataset and dark burgundy analyst interface. Every suspicious score still requires human review.
 
-[Deploy FinGuard on Streamlit Community Cloud](https://share.streamlit.io/deploy?repository=KrushnaManke/FinGuard-AI&branch=main&mainModule=app/Home.py). The repository includes the demo dataset, trained models, evaluation report, and deployment dependencies.
+[**Open FinGuard AI live**](https://finguard-ai-4otf.onrender.com). Hosted on Render with the tracked demo dataset, trained models, evaluation report, and deployment-ready configuration. Free-instance services may take a moment to wake after inactivity.
 
 <p align="center">
   <img src="docs/images/dashboard-preview.png" alt="FinGuard AI black and burgundy dashboard preview" width="900">
