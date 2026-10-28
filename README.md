@@ -64,6 +64,12 @@ The dashboard can also expose a FastAPI service. API requests share the SQLite a
 
 This implements learning paths and usable scaffolding, **not** a production-ready banking deployment. AWS account resources, credentials, legal source material, and credit datasets are intentionally not fabricated or committed.
 
+## Future goals
+
+1. Add richer entity, merchant, and account history to enable stronger graph-based fraud investigations.
+2. Integrate calibrated real-time monitoring and explainable alerts with configurable analyst approval workflows.
+3. Expand secure multi-tenant deployment with role-based access, audit exports, and production-grade model governance.
+
 ## Dataset limitations
 
 `data/raw/creditcard.csv` contains 284,807 rows, 492 fraud labels, a `Time` offset, `Amount`, and anonymized `V1`–`V28` features. It has no customer ID/history, merchant/destination data, currency field, loan fields, or credit-default target.
