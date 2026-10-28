@@ -60,7 +60,11 @@ The dashboard can also expose a FastAPI service. API requests share the SQLite a
 | LangGraph | Optional graph wrapping the retrieval/evidence investigation step |
 | MLflow, W&B, Docker | Optional experiment tracking, Dockerfile, Compose, automated image build |
 | AWS EC2, S3, IAM, GitHub Actions | S3 upload helper, private encrypted bucket template, CI checks; credentials and deployment are user-configured |
-| Testing, monitoring, documentation | Pytest suite, PSI drift utility, this guide, CI workflow |
+| Testing, CI/CD, documentation | 30 pytest cases, PSI drift utility, GitHub Actions, Docker build validation, this guide |
+| Streamlit multipage apps, UX | Interactive navigation, persistent filters, dark burgundy analyst theme, Plotly visualizations |
+| API security, auditability | Pydantic request validation, optional bearer authentication, SQLite reviews and immutable evidence exports |
+| RAG evaluation, evidence provenance | Retrieval relevance checks, source-linked excerpts, evidence-grounded drafting, and reportable RAG metrics |
+| Responsible AI, model governance | Chronological validation, review thresholds, baseline comparisons, uncertainty notices, human-review safeguards |
 
 This implements learning paths and usable scaffolding, **not** a production-ready banking deployment. AWS account resources, credentials, legal source material, and credit datasets are intentionally not fabricated or committed.
 
