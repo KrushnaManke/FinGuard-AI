@@ -49,6 +49,7 @@ The dashboard can also expose a FastAPI service. API requests share the SQLite a
 
 | Roadmap skills | Project implementation |
 |---|---|
+| **Python 3.9+** | Primary implementation language for the Streamlit app, ML pipeline, FastAPI service, and tests |
 | Python, Pandas, EDA | Schema validation, class counts, duplicate reporting, and summaries in `src/finguard/data.py` |
 | Feature engineering, imbalanced classification | Log amount/elapsed-cycle features; class-weighted logistic baseline and validation-capacity threshold selection |
 | XGBoost, anomaly detection, SHAP | Optional XGBoost/LightGBM training, Isolation Forest, optional SHAP attribution |
