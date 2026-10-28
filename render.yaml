@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: finguard-ai
+    runtime: python
+    plan: free
+    buildCommand: pip install -e '.[app]'
+    startCommand: streamlit run app/Home.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
+    healthCheckPath: /_stcore/health
+    autoDeploy: true
